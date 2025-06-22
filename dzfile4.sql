@@ -16,11 +16,11 @@ with datas_table as (
     from public.google_ads_basic_daily
 
 ) 
-select ad_date, media_source, 
+select ad_date, media_source, campaign_name, adset_name,
 sum(spend) as "spend sum",
 sum(impressions) as "impressions sum",
 sum(clicks) as "clicks sum",
 sum(value) as "value sum"
 from datas_table
-group by ad_date, media_source
+group by ad_date, media_source, campaign_name, adset_name
 
